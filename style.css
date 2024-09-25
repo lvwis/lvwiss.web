@@ -1,0 +1,150 @@
+@font-face {
+    font-family: myFont;
+    src: url(baguio.ttf);
+}
+
+@font-face {
+    font-family: yourFont;
+    src: url(hagrid.ttf);
+}
+
+body{
+    margin: 0;
+    text-align: center;
+    background: url('bg5.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 75% 75%;
+}
+
+.logo{
+    margin: 0;
+    padding: 10px 10px;
+    font-family: myfont;
+    font-size: 50px;
+    color: #5387c4;
+}
+
+
+
+.attendance-container{
+    margin: 0 auto;
+    margin-top: 125px;
+    background-color: #121229;
+    width: 380px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.attendance-container::after, .attendance-container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, #bb369c, #33539d, #69afff, #b397ff, #292b69, #7324bc, #363cdf, #bb369c);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.attendance-container::before{
+    filter: blur(2rem);
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+
+    }
+    to{
+        --angle: 360deg;
+
+    }
+}
+
+input{
+    width: 145px;
+    height: 35px;
+    margin: 5px;
+    margin-left: 0px;
+    padding: 14px 16px;
+    border-radius: 6px;
+    background-color: #e8e9e0;
+    font-family: myFont, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    border-color: rgba(0, 0, 0, 0.085);
+    outline: none;
+    transition: .5s;
+}
+
+input:hover{
+    border: 2px solid #5387c4;
+}
+
+input:active{
+
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 0.719);
+    font-weight: bold;
+
+}
+
+
+.emailnum{
+    width: 300px;
+}
+
+.submit{
+    width: 300px;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    background: #9580ce;
+    padding: 0;
+    font-size: 13px;
+    border-radius: 25px;
+    font-family: yourFont;
+    color: rgb(16, 16, 16);
+    transition: .5s;
+    border: rgba(0, 0, 0, 0.081);
+    outline: none;
+
+}
+
+.submit:hover{
+    background: #62387e;
+    border: none;
+}
+
+.submit:active{
+    background: #5387c4;
+}
+
+.alert{
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    background: #1b2c55;
+    padding: 5px 0px;
+    border-radius: 0;
+    color: #e8e9e0;
+    font-size: 23px;
+    font-family: myFont;
+    font-weight: 500;
+    display: none;
+}
